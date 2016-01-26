@@ -1,0 +1,356 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+				</script>	
+<!-- start menu -->
+<script src="js/simpleCart.min.js"> </script>
+<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>		
+<script charset="utf-8" src="js/apiomat.js"></script>
+<script charset="utf-8" src="js/jstorage.js"></script>
+
+<script>
+$( document ).ready(function() {
+	simpleCart.currency({ 
+    code: "IDR" ,
+    name: "Rupiah" ,
+    symbol: "Rp " 
+});
+
+simpleCart({
+    cartColumns: [
+        { attr: "name" , label: "Name" } ,
+        { attr: "price" , label: "Price", view: 'currency' } ,   
+        { attr: "total" , label: "SubTotal", view: 'currency' } ,
+        { view: "remove" , text: "Remove" , label: "Hapus" },
+		{ view: "decrement" , label: "Tambah", text: "-" } ,
+        { view: "increment" , label: "Kurang" , text: "+" } 
+    ],
+	cartStyle: "table"
+});
+
+
+});
+</script>		
+	<script>
+$( document ).ready(function() {
+   
+$('#l1').focus(function() {
+         $(this).prop('type', 'text');
+    }).blur(function() {
+         $(this).prop('type', 'password');
+    });
+	
+    $('#s1').focus(function() {
+         $(this).prop('type', 'text');
+    }).blur(function() {
+         $(this).prop('type', 'password');
+    });
+
+});
+</script>
+</head>
+<body onload="init()">
+	<!--top-header-->
+	<div class="top-header">
+	<div class="container">
+		<div class="top-header-main">
+			<div class="col-md-4 top-header-left">
+				
+			</div>
+			<div class="col-md-4 top-header-middle">
+				<a href="index.html"><img width="50%" src="images/logo-4.png" alt="" /></a>
+			</div>
+			<div class="col-md-4 top-header-right">
+				<div class="cart box_1">
+						<a href="checkout.html">
+						<h3> <div class="total">
+							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+							<img src="images/cart-1.png" alt="" />
+						</a>
+						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						<div class="clearfix"> </div>
+					</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!--top-header-->
+	<!--bottom-header-->
+	<div class="header-bottom">
+		<div class="container">
+			<div class="top-nav">
+				<ul class="memenu skyblue">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="books.html">Books</a></li>
+				<li><a href="tag.html?id=music">Music</a></li>
+				<li><a href="tag.html?id=gifts">Gifts</a></li>
+				<li><a href="tag.html?id=homewares">Homewares</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="order.html">Order</a></li>
+					
+				
+				
+					
+			
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--bottom-header-->
+	<!--banner-starts-->
+	<div class="bnr" id="home">
+		<div  id="top" class="callbacks_container">
+			<ul class="rslides" id="slider4">
+			    <li>
+					<div class="banner-1"></div>
+				</li>
+				<li>
+					<div class="banner-2"></div>
+				</li>
+				<li>
+					<div class="banner-3"></div>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<!--banner-ends--> 
+	<!--Slider-Starts-Here-->
+				<script src="js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: false,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+			<!--End-slider-script-->
+	<!--start-banner-bottom--> 
+	
+	<!--end-banner-bottom--> 
+	<!--start-shoes--> 
+	<div class="account">
+		<div class="container"> 
+			<div class="account-bottom">
+				<div class="col-md-6 account-left">
+				
+					<div class="account-top heading">
+						<h3>NEW CUSTOMERS</h3>
+					</div>
+					<div class="address">
+						<span>Email</span>
+						<input id="s0" type="text">
+					</div>
+					<div class="address">
+						<span>Password</span>
+						<input id="s1" type="text">
+					</div>
+					<div class="address">
+						<span>Nama</span>
+						<input id="s2" type="text">
+					</div>
+					<div class="address new">
+						<input id="buttonS" onclick="daftar()" type="submit" value="submit">
+					</div><br>
+					<p id="statusS"></p>
+					
+				</div>
+				<div class="col-md-6 account-left">
+					
+					<div class="account-top heading">
+						<h3>LOGIN</h3>
+					</div>
+					<div class="address">
+						<span>Email Address</span>
+						<input id="l0" type="text">
+					</div>
+					<div class="address">
+						<span>Password</span>
+						<input id="l1" type="text">
+					</div>
+					<div class="address">
+						
+						<input type="submit" onclick="login()"  value="Login">
+					</div>
+					<br>
+					<p id="statusL"></p>
+				</div>
+		
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--end-shoes-->
+	
+	<!--end-footer-text-->
+	<div class="footer-text">
+		<div class="container">
+			<div class="footer-main">
+				<p class="footer-class">© 2015 Aksara Store | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+			</div>
+		</div>
+		<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	</div>
+	<!--end-footer-text-->	
+</body>
+<script>
+var dataLength_login = 0;
+var dataLength = 0;
+var buttonS = document.getElementById('buttonS');
+
+
+    function init() {
+        var user = new Apiomat.User();
+        user.setUserName("Admin");
+        user.setPassword("12345");
+        Apiomat.Datastore.configure(user);
+        var saveCB = {
+            onOk: function() {    
+            },
+            onError: function(error) {    
+            }
+        };
+        user.loadMe({
+            onOk: function() {
+            },
+            onError: function(error) {
+               
+                user.save(saveCB);
+            }
+        });
+    }
+
+
+    function login() {
+		
+		var x = document.getElementById("l0").value;
+		var z = document.getElementById("l1").value;
+        var y = "email==" + '"' + x + '"' + " and " + "password==" + '"' + z + '"';
+	
+		Apiomat.Customer.getCustomers(y, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    dataLength_login = data.length;	
+                    console.log(data);					
+                } console.log(dataLength_login);
+				if (dataLength_login == 0){document.getElementById("statusL").innerHTML = '&nbsp;'+ "Mohon Ulangi. kombinasi Email dan password salah";} 
+				else {
+				dataLength_login=0;
+				$.jStorage.set("keyL",x);
+                $.jStorage.set("keyP",z);
+                window.location.href = "index.html";
+				}
+            },
+            onError: function(error) {} });	
+    }
+
+    
+    function daftar() {
+		
+		var x = document.getElementById("s0").value;
+        var y = "email==" + '"' + x + '"';
+	
+		Apiomat.Customer.getCustomers(y, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    dataLength = data.length;					
+                } console.log(dataLength);
+				if (dataLength == 1){document.getElementById("statusS").innerHTML = '&nbsp;'+ "Mohon maaf, email telah digunakan user lain"; dataLength = 0;} else {daftar_pengguna()}
+            },
+            onError: function(error) {} });
+
+    }
+
+
+
+	function daftar_pengguna() {
+        dataLength = 0;
+        var a = document.getElementById("s0").value;
+        var b = document.getElementById("s1").value;
+        var c = document.getElementById("s2").value;
+	    buttonS.style.display = (buttonS.style.display != 'visible') ? 'none' : '';
+
+        if (a != "" && b != "" && c != "") {
+            var task = new Apiomat.Customer();
+            task.setEmail(a);
+            task.setPassword(b);
+			task.setNama(c);
+			
+            task.save({
+                onOk: function() {
+                    document.getElementById("statusS").innerHTML = '&nbsp;'+ "Pendaftaran Berhasil, Silahkan Login";
+                }, onError: function(error) {}
+            });
+
+        } else {
+            document.getElementById("statusS").innerHTML = '&nbsp;'+"Mohon ulangi, isi semua data";
+            buttonS.style.display = (buttonS.style.display != 'none') ? 'visible' : '';
+        }
+    }
+
+</script>
+</html>

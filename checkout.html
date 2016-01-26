@@ -1,0 +1,353 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+				</script>	
+<!-- start menu -->
+<script src="js/simpleCart.min.js"> </script>
+<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>		
+<script charset="utf-8" src="js/apiomat.js"></script>
+<script charset="utf-8" src="js/jstorage.js"></script>
+
+
+<script>
+$( document ).ready(function() {
+	simpleCart.currency({ 
+    code: "IDR" ,
+    name: "Rupiah" ,
+    symbol: "Rp " 
+});
+
+simpleCart({
+    cartColumns: [
+        { attr: "name" , label: "Name" } ,
+        { attr: "price" , label: "Price", view: 'currency' } ,   
+        { attr: "total" , label: "SubTotal", view: 'currency' } ,
+        { view: "remove" , text: "Remove" , label: "Hapus" },
+		{ view: "decrement" , label: "Tambah", text: "-" } ,
+        { view: "increment" , label: "Kurang" , text: "+" } ,
+		{ attr: "quantity", label: "Qty"}
+    ],
+	cartStyle: "table"
+	
+	
+});
+
+
+
+
+});
+</script>
+<style>
+table {
+    width: 100%; 
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 5px;
+    border: 1px solid #999;
+}
+
+th {
+    color: #333;  
+    background: #eee;
+}
+
+tr {
+    color: #333; 
+    background: white;
+}
+
+tbody tr:hover {
+    color: grey;
+</style>		
+</head>
+<body onload="init()">
+	<!--top-header-->
+	<div class="top-header">
+	<div class="container">
+		<div class="top-header-main">
+			<div class="col-md-4 top-header-left">
+				<div class="search-bar">
+					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+					<input type="submit" value="">
+				</div>
+			</div>
+			<div class="col-md-4 top-header-middle">
+				<a href="index.html"><img width="50%" src="images/logo-4.png" alt="" /></a>
+			</div>
+			<div class="col-md-4 top-header-right">
+				<div class="cart box_1">
+						<a href="checkout.html">
+						<h3> <div class="total">
+							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+							<img src="images/cart-1.png" alt="" />
+						</a>
+						<p><a href="javascript:;" onclick="$.jStorage.flush()" class="simpleCart_empty">Empty Cart</a></p>
+						<div class="clearfix"> </div>
+					</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!--top-header-->
+	<!--bottom-header-->
+	<div class="header-bottom">
+		<div class="container">
+			<div class="top-nav">
+				<ul class="memenu skyblue">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="index.html">Books</a></li>
+				<li><a href="index.html">Music</a></li>
+				<li><a href="index.html">Gifts</a></li>
+				<li><a href="index.html">Homewares</a></li>
+				<li><a href="index.html">About</a></li>
+				<li><a href="index.html">Order</a></li>
+					
+				
+				
+					
+			
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--bottom-header-->
+	<!--banner-starts-->
+	<div class="bnr" id="home">
+		<div  id="top" class="callbacks_container">
+			<ul class="rslides" id="slider4">
+			    <li>
+					<div class="banner-1"></div>
+				</li>
+				<li>
+					<div class="banner-2"></div>
+				</li>
+				<li>
+					<div class="banner-3"></div>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<!--banner-ends--> 
+	<!--Slider-Starts-Here-->
+				<script src="js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: false,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+			<!--End-slider-script-->
+	
+	<!--start-shoes--> 
+	<div class="shoes"> 
+		<div class="container"> 
+			<div class=" cart-items heading">
+			 <h3>My Shopping Bag</h3>
+			
+				<div id="listItem" class="in-check" >
+			
+			    </div>
+			
+                <div>
+					<div id="tableItem" class="simpleCart_items "></div>
+				</div><br>
+				<div id="totalPayment" class="total"><span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div><br><br>
+			   <br/>
+			   <p id="statusS"></p>
+			   <div id="formPayment" class="col-md-12 account-left">
+				
+					<h4>Personal Information</h4>
+					<div class="address">
+						<span>Nama</span>
+						<input id="c0" type="text">
+					</div>
+					<div class="address">
+						<span>Lokasi</span>
+						<input id="c1" type="text">
+					</div>
+					<div class="address">
+						<span>Kontak (No Telp)</span>
+						<input id="c2" type="text">
+					</div>
+					<div class="address new">
+						<input id="buttonS" onclick="orderAksara()" type="submit" value="submit">
+					</div><br>
+					<p id="statusS2"></p>
+					
+				</div>
+			</div>  
+		</div>
+	</div>
+	
+	<!--end-shoes-->
+	
+	<!--end-footer-text-->
+	<div class="footer-text">
+		<div class="container">
+			<div class="footer-main">
+				<p class="footer-class">© 2015 Aksara Store | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+			</div>
+		</div>
+		<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	</div>
+	<!--end-footer-text-->	
+</body>
+<script type="text/javascript" >
+var buttonS = document.getElementById('buttonS');
+var vL = $.jStorage.get("keyL");
+var form = document.getElementById("formPayment") ; 
+var listOrder = "";
+    function init() {
+        var user = new Apiomat.User();
+        user.setUserName("Admin");
+        user.setPassword("12345");
+        Apiomat.Datastore.configure(user);
+        var saveCB = {
+            onOk: function() {    
+            },
+            onError: function(error) {    
+            }
+        };
+        user.loadMe({
+            onOk: function() {
+		     loadTask();
+			
+			
+            },
+            onError: function(error) {
+                user.save(saveCB);
+            }
+        });
+    }
+
+	
+	function loadTask() {
+	if (vL == null) {
+	form.style.display = 'none';
+	document.getElementById("statusS").innerHTML = "Anda harus Login terlebih dahulu !"
+	}
+	else{
+	(form.style.display != 'none') ? 'visible' : '';
+	document.getElementById("statusS").innerHTML = ""
+	}
+	
+	}
+	
+	
+	function orderAksara() {
+	var d = new Date();
+    var m = d.getMonth();
+    var y = d.getFullYear(); 
+    var x = d.getDate();
+    var tanggal = x+"/"+m+"/"+y;
+
+	
+	listOrder = "";
+	var textTable1 =  $("#tableItem td:first-child");
+	var textTable2 =  $("#tableItem td:last-child");
+	for (var i = 0; i < textTable1.length ; i++) {
+      listOrder += (textTable1[i].innerHTML +' ('+textTable2[i].innerHTML) + ')' + '<br>';
+
+    };
+        
+        var a = document.getElementById("c0").value;
+        var b = document.getElementById("c1").value;
+        var c = document.getElementById("c2").value;
+	    buttonS.style.display = (buttonS.style.display != 'visible') ? 'none' : '';
+		
+		var textTable1 =  $("#totalPayment").text();
+
+        if (a != "" && b != "" && c != "") {
+            var task = new Apiomat.Order();
+            task.setName(a);
+            task.setEmail(vL);
+			task.setLocation(b);
+			task.setContact(c);
+			task.setShoppingList(listOrder);
+			task.setTotal(textTable1);
+			task.setDate_time(tanggal);
+			task.setStatus("belum ditanggapi");
+            task.save({
+                onOk: function() {
+                    document.getElementById("statusS2").innerHTML = '&nbsp;'+ "Pemesanan Berhasil, Mohon tunggu konfirmasi selanjutnya";
+                }, onError: function(error) {}
+            });
+
+        } else {
+            document.getElementById("statusS2").innerHTML = '&nbsp;'+"Mohon ulangi, isi semua data";
+            buttonS.style.display = (buttonS.style.display != 'none') ? 'visible' : '';
+        }
+    }
+    
+
+</script>
+</html>

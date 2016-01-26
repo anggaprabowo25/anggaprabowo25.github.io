@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!----webfonts--->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<!---//webfonts--->  
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+$( document ).ready(function() {
+
+    $('input[type="number"]').focusout(function (evt) {
+    if(!$.isNumeric($(this).val())){
+     $(this).val("");
+	 $("#blockHarga").text("Masukkan angka contoh 1000 atau 10000");
+   }
+   else{ $("#blockHarga").text("");}
+});
+
+});
+</script>
+
+<script charset="utf-8" src="js/apiomat.js"></script>
+<script charset="utf-8" src="js/jstorage.js"></script>
+<script type="text/javascript"src="js/lodash.min.js"></script>
+</head>
+<body onload="init()">
+<div id="wrapper">
+     <!-- Navigation -->
+        <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="dashboard.html"><img width="80" src="images/logo-4_2.png" alt=""/> Point Of Sales</a>
+			
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-nav navbar-right">
+				
+			  
+			</ul>
+		
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+			
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="dashboard.html"><i class="fa fa-laptop nav_icon"></i>Point Of Sales<span class="fa arrow"></span></a>
+                        </li>
+						<li>
+                            <a href="daftar_Item.html"><i class="fa fa-check-square-o nav_icon"></i>Daftar Item<span class="fa arrow"></span></a>
+                        </li>
+                        <li>
+                            <a href="report.html"><i class="fa fa-indent nav_icon"></i>Laporan<span class="fa arrow"></span></a>
+                        </li>
+						 <li>
+                            <a href="#" onclick="logout()"><i class="fa fa-power-off nav_icon"></i>Logout</a>
+                        </li>
+						
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <div id="page-wrapper">
+        <div class="graphs">
+	     
+	  <div class="col_1">
+		  	<h3 id="nama"> Saya </h3><br>
+			<p>Status : Belum ditanggapi</p><br>
+			
+	
+			
+		    <div class="col-md-6 span_8">
+			
+			<div class="tab-pane active" id="horizontal-form">
+							<div class="form-horizontal">
+								<div class="form-group">
+								
+									<label  class="col-sm-2 control-label">Nama</label>
+									<div class="col-sm-6">
+										<input id="nama_list" type="text" class="form-control1" onchange="searchTask()" on  placeholder="Nama Pelanggan">
+									</div>
+									<div class="col-sm-2">
+										<button style="float:left" class="btn-default btn" >Cari</button>
+									</div>
+									
+								</div>
+								</div>
+								</div>
+		    
+		       <div class="activity_box">
+			   
+		        <div class="scrollbar" id="listMenu">
+                   
+                  
+                    
+	  		        </div>
+		          </div>
+		    </div>
+			<div class="col-md-6 stats-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Order Detail</h4>
+                </div>
+                <div class="panel-body">
+                    <ul id="listPayment" class="list-unstyled">
+                        
+                    </ul><br>
+					<button onclick="changeStatus()" id="buttonS" type="button" class="btn btn-sm btn-primary">Ok</button>
+					<br>
+					<p id="list_status"></p>
+                </div>
+            </div>
+			
+			
+			  
+			
+			
+			 
+            <div class="clearfix"> </div>
+	  </div><br>
+	  
+  <div class="col_1">
+  <p>Status : Sudah ditanggapi</p><br>
+        	 <div class="col-md-6 span_8">
+			<div class="tab-pane active" id="horizontal-form">
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label  class="col-sm-2 control-label">Nama</label>
+									<div class="col-sm-6">
+										<input id="nama_list2" type="text" class="form-control1" onchange="searchTask_2()" on  placeholder="Nama Pelanggan">
+									</div>
+									<div class="col-sm-2">
+										<button style="float:left" class="btn-default btn" >Cari</button>
+									</div>
+									
+								</div>
+								</div>
+								</div>
+		    
+		       <div class="activity_box">
+			   
+		        <div class="scrollbar" id="listMenu_2">
+                   
+                  
+                    
+	  		        </div>
+		          </div>
+		    </div>
+			
+			<div class="col-md-6 stats-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Order Detail</h4>
+                </div>
+                <div class="panel-body">
+                    <ul id="listPayment_2" class="list-unstyled">
+                        
+                    </ul><br>
+					<br>
+					<p id="list_status"></p>
+                </div>
+            </div>
+			
+        	<div class="clearfix"> </div>
+      </div>
+ 
+       </div>
+      </div>
+      <!-- /#page-wrapper -->
+   </div>
+    <!-- /#wrapper -->
+<!-- Nav CSS -->
+<link href="css/custom.css" rel="stylesheet">
+<!-- Metis Menu Plugin JavaScript -->
+<script src="js/metisMenu.min.js"></script>
+<script src="js/custom.js"></script>
+<script type="text/javascript" >
+var favorite;
+var v1 = $.jStorage.get("key1");
+var v2 = $.jStorage.get("key2")
+var buttonS = document.getElementById('buttonS');
+var total = [] ;
+var arraySort = [] ;
+var arraySort_2 = [] ;
+var listMenu = '' ;
+var list_id = '' ;
+var list_total = '' ;
+var shoppingList = ""
+    
+    function init() {
+        var user = new Apiomat.User();
+        user.setUserName("Admin");
+        user.setPassword("12345");
+        Apiomat.Datastore.configure(user);
+        var saveCB = {
+            onOk: function() {    
+            },
+            onError: function(error) {    
+            }
+        };
+        user.loadMe({
+            onOk: function() {
+			loadUser();
+			loadTask();
+			loadTask_2()
+            },
+            onError: function(error) {
+                user.save(saveCB);
+            }
+        });
+    }
+	
+	function loadUser() {
+		
+        var y = "id_user==" + '"' + v1 + '"';
+	 
+		Apiomat.User_admin.getUser_admins(y, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+				document.getElementById('nama').innerHTML =  "Login sebagai : "+ data[i].getNama();
+
+                };
+            },
+            onError: function(error) {} });	
+    }
+	
+    function loadTask() {
+		document.getElementById("listMenu").innerHTML = "";
+		var y = "status==" + '"belum ditanggapi"' ;
+		Apiomat.Order.getOrders(y, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+				     arraySort.push({ 'user': data[i].getName(), 'ID' : data[i].getID() });
+                }sortTask((_.sortByAll(arraySort, 'user')));
+            },
+            onError: function(error) {} });	
+    }
+	
+	function loadTask_2() {
+		document.getElementById("listMenu_2").innerHTML = "";
+		var y = "status==" + '"sudah ditanggapi"' ;
+		Apiomat.Order.getOrders(y, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+				     arraySort_2.push({ 'user': data[i].getName(), 'ID' : data[i].getID() });
+                }sortTask_2((_.sortByAll(arraySort_2, 'user')));
+            },
+            onError: function(error) {} });	
+    }
+	
+	function searchTask() {
+		document.getElementById("listMenu").innerHTML = "";
+		var nama_list = document.getElementById("nama_list").value ;
+        var y = "name like"  + '"' + nama_list + '"' + " and " + "status==" + '"belum ditanggapi"'  ;
+	 
+		Apiomat.Order.getOrders(y, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+				
+				
+				     document.getElementById("listMenu").innerHTML += " <div class='activity-row'> <div class='col-xs-3'><a  onclick='addList("+'"'+data[i].getShoppingList()+'"'+','+'"'+data[i].getTotal()+'"'+','+'"'+data[i].getID()+'"'+','+'"'+data[i].getLocation()+'"'+','+'"'+data[i].getContact()+'"'+','+'"'+data[i].getEmail()+'"'+','+'"'+data[i].getDate_time()+'"'+")'><i class='fa fa-check text-info icon_13'></i></a></div> <div class='col-xs-8 activity-desc'> <h5>"+data[i].getName()+"</h5> <p>IDR "+data[i].getTotal()+"</p></div>  <div class='clearfix'> </div>  </div>" ;
+
+			
+                };
+            },
+            onError: function(error) {} });	
+    }
+	
+	
+	
+	
+	function sortTask(data) {
+	
+		for (var i = 0; i < data.length; i++) {
+				
+		var z = "id==id"+'('+data[i].ID +')'  ;
+		
+		Apiomat.Order.getOrders(z, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+				
+				   
+					 document.getElementById("listMenu").innerHTML += " <div class='activity-row'> <div class='col-xs-3'><a  onclick='addList("+'"'+data[i].getShoppingList()+'"'+','+'"'+data[i].getTotal()+'"'+','+'"'+data[i].getID()+'"'+','+'"'+data[i].getLocation()+'"'+','+'"'+data[i].getContact()+'"'+','+'"'+data[i].getEmail()+'"'+','+'"'+data[i].getDate_time()+'"'+")'><i class='fa fa-check text-info icon_13'></i></a></div> <div class='col-xs-8 activity-desc'> <h5>"+data[i].getName()+"</h5> <p>IDR "+data[i].getTotal()+"</p></div>  <div class='clearfix'> </div>  </div>" ;
+
+                };
+            },
+            onError: function(error) {} });	
+					 
+       };
+	  
+    }
+	
+	
+	function sortTask_2(data) {
+	
+		for (var i = 0; i < data.length; i++) {
+				
+		var z = "id==id"+'('+data[i].ID +')'  ;
+		
+		Apiomat.Order.getOrders(z, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+				
+				   
+					 document.getElementById("listMenu_2").innerHTML += " <div class='activity-row'> <div class='col-xs-3'><a  onclick='addList_2("+'"'+data[i].getShoppingList()+'"'+','+'"'+data[i].getTotal()+'"'+','+'"'+data[i].getID()+'"'+','+'"'+data[i].getLocation()+'"'+','+'"'+data[i].getContact()+'"'+','+'"'+data[i].getEmail()+'"'+','+'"'+data[i].getDate_time()+'"'+")'><i class='fa fa-check text-info icon_13'></i></a></div> <div class='col-xs-8 activity-desc'> <h5>"+data[i].getName()+"</h5> <p>IDR "+data[i].getTotal()+"</p></div>  <div class='clearfix'> </div>  </div>" ;
+
+                };
+            },
+            onError: function(error) {} });	
+					 
+       };
+	  
+    }
+	
+	function searchTask_2() {
+		document.getElementById("listMenu_2").innerHTML = "";
+		var nama_list = document.getElementById("nama_list2").value ;
+        var y = "name like"  + '"' + nama_list + '"' + " and " + "status==" + '"sudah ditanggapi"'  ;
+	 
+		Apiomat.Order.getOrders(y, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+				
+				
+				     document.getElementById("listMenu_2").innerHTML += " <div class='activity-row'> <div class='col-xs-3'><a  onclick='addList_2("+'"'+data[i].getShoppingList()+'"'+','+'"'+data[i].getTotal()+'"'+','+'"'+data[i].getID()+'"'+','+'"'+data[i].getLocation()+'"'+','+'"'+data[i].getContact()+'"'+','+'"'+data[i].getEmail()+'"'+','+'"'+data[i].getDate_time()+'"'+")'><i class='fa fa-check text-info icon_13'></i></a></div> <div class='col-xs-8 activity-desc'> <h5>"+data[i].getName()+"</h5> <p>IDR "+data[i].getTotal()+"</p></div>  <div class='clearfix'> </div>  </div>" ;
+
+			
+                };
+            },
+            onError: function(error) {} });	
+    }
+	
+	
+	function addList(list,harga,id,location,contact,email,time) {
+		document.getElementById("listPayment").innerHTML = "<li><p>Email : "+email+"</p><br><p>No Telp : "+contact+"</p><br><p> Tanggal Pemesanan : "+time+"</p><br><p> Lokasi : "+location+"</p><br><span>Daftar Belanja :</span><br><strong>"+list+"</strong><br> <a>"+harga+"</a>  &nbsp; &nbsp;<button onclick='deleteList()' ><i class='fa fa-trash-o'></i></button></li>"
+        list_id = id;
+		list_total = harga;
+		shoppingList = list;
+		
+	}
+	
+	function addList_2(list,harga,id,location,contact,email,time) {
+		document.getElementById("listPayment_2").innerHTML = "<li><p>Email : "+email+"</p><br><p>No Telp : "+contact+"</p><br><p> Tanggal Pemesanan : "+time+"</p><br><p> Lokasi : "+location+"</p><br><span>Daftar Belanja :</span><br><strong>"+list+"</strong><br> <a>"+harga+"</a>  &nbsp; &nbsp;<button onclick='deleteList()' ><i class='fa fa-trash-o'></i></button></li>"
+        list_id = id;
+		list_total = harga;
+		shoppingList = list;
+		
+	}
+	
+	function deleteList() {
+     var z = "id==id"+'('+list_id+')' ;
+		
+		Apiomat.Order.getOrders(z, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+					 addToDelete(data[i]);
+                };
+            },
+            onError: function(error) {} });	
+    }
+	
+
+	
+	function addToDelete(del) {
+
+        del.deleteModel({
+            onOk: function() {
+
+                document.getElementById("list_status").innerHTML = "<br> <div class='alert alert-success' role='alert'><strong>OK!</strong> Data berhasil dihapus</div>";
+                   setTimeout(function() {
+                   window.location.href = "dashboard.html";
+                },3000);
+				
+
+            },
+            onError: function(error) {
+                
+            }
+        });
+    }
+	
+	function changeStatus() {
+	
+	buttonS.style.display = (buttonS.style.display != 'visible') ? 'none' : '';
+       var z = "id==id"+'('+list_id+')' ;
+	
+		Apiomat.Order.getOrders(z, {
+        onOk: function(data) {
+                for (var i = 0; i < data.length; i++) {
+				saveToStatus(data[i]);
+                };
+            },
+            onError: function(error) {} });	
+
+    }
+	
+	
+	function saveToStatus(data) { 
+
+		data.setStatus("sudah ditanggapi"); 
+		data.save({
+		onOk: function() {
+		document.getElementById("list_status").innerHTML = '&nbsp;'+ "Berhasil disimpan";
+		setTimeout(function(){ document.getElementById("list_status").innerHTML = '&nbsp;'+ ""; }, 2000);
+		saveReport();
+		},
+		onError: function(error) {}
+		}); 
+	}
+	
+	
+	
+   
+
+	
+	function saveReport() {
+        
+
+var date = new Date();
+var minute = date.getMinutes();
+var hour = date.getHours();
+var day = ("0" + date.getDate()).slice(-2);
+var month = ("0" + (date.getMonth() + 1)).slice(-2);
+var year = date.getFullYear();
+var time_1 = year + "-" + month + "-" + day;
+var time_2 = hour + "." + minute  ;
+
+
+            var task = new Apiomat.Laporan_penjualan();
+            task.setTanggal(time_1);
+			task.setJam(time_2);
+			task.setPendapatan(list_total);
+			task.setShoppingList(shoppingList);
+            task.save({
+                onOk: function() {
+				    buttonS.style.display = (buttonS.style.display != 'none') ? 'visible' : '';
+                    document.getElementById("list_status").innerHTML = " <br><div class='alert alert-success' role='alert'><strong>OK!</strong> Laporan berhasil disimpan</div>";       
+                    setTimeout(function(){ document.getElementById("list_status").innerHTML = '&nbsp;'+ ""; }, 4000);	
+                   setTimeout(function() {
+                   window.location.href = "dashboard.html";
+                },5000);					
+			   }, onError: function(error) {console.log(error)}
+            });
+
+      
+    }
+	
+	
+
+function logout() {
+     	
+	 $.jStorage.flush();
+	 setTimeout(function() { window.location.href = "index.html"}, 2000);
+
+    }
+	
+    
+
+	
+	
+
+	
+</script>
+</body>
+</html>
